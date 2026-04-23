@@ -21,6 +21,7 @@ export function Login() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isAdultConfirmed, setIsAdultConfirmed] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -38,6 +39,7 @@ export function Login() {
 
   const goToLogin = () => {
     setError('');
+    setIsAdultConfirmed(false);
     navigate(`/login${searchSuffix}`);
   };
 
@@ -77,6 +79,12 @@ export function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
+    if (isSignUp && !isAdultConfirmed) {
+      setError('You must confirm that you are 18 years or older to register.');
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -166,9 +174,21 @@ export function Login() {
             </div>
           </div>
 
+          {isSignUp && (
+            <label className="flex items-start gap-2 text-sm text-foreground">
+              <input
+                type="checkbox"
+                checked={isAdultConfirmed}
+                onChange={(e) => setIsAdultConfirmed(e.target.checked)}
+                className="mt-1"
+              />
+              <span>I confirm that I am 18 years of age or older.</span>
+            </label>
+          )}
+
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || (isSignUp && !isAdultConfirmed)}
             className="w-full bg-primary text-primary-foreground py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/30 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {loading ? 'Please wait...' : isSignUp ? 'Create Account' : 'Sign In'}
