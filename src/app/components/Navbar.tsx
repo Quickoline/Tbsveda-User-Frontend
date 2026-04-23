@@ -124,7 +124,7 @@ export function Navbar() {
               <img
                 src="/logo-tbs-veda.png"
                 alt="TBS Veda — The Best Solution"
-                className="h-11 w-auto max-w-[min(72vw,200px)] object-contain object-left sm:h-12 sm:max-w-[240px] lg:h-14 lg:max-w-[280px]"
+                className="h-28 w-auto max-w-[min(96vw,620px)] object-contain object-left sm:h-36 sm:max-w-[760px] lg:h-44 lg:max-w-[980px]"
               />
               <div className="hidden sm:flex flex-col leading-tight">
                 <span style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-[1.15rem] lg:text-[1.35rem] font-bold text-[#5B4636] tracking-wide">TBS Veda</span>
