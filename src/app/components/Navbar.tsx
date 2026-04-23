@@ -208,7 +208,7 @@ export function Navbar() {
                               <h4 className="text-[15px] font-semibold text-gray-800 line-clamp-1">{np.displayName}</h4>
                               <p className="text-xs text-gray-500 font-medium">{catName}</p>
                             </div>
-                            <span className="text-sm font-bold text-primary">${np.displayPrice}</span>
+                            <span className="text-sm font-bold text-primary">Rs. {np.displayPrice}</span>
                           </Link>
                         );
                       })}
@@ -495,7 +495,7 @@ export function Navbar() {
                             <h4 className="text-[15px] font-semibold text-gray-800 line-clamp-1">{np.displayName}</h4>
                             <p className="text-xs text-gray-500 font-medium">{catName}</p>
                           </div>
-                          <span className="text-sm font-bold text-primary">${np.displayPrice}</span>
+                          <span className="text-sm font-bold text-primary">Rs. {np.displayPrice}</span>
                         </Link>
                       );
                     })}

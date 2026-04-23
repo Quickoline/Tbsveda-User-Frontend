@@ -130,10 +130,10 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Price */}
         <div className="flex items-center gap-2 mb-4 mt-auto">
-          <span className="text-xl text-primary">${np.displayPrice}</span>
+          <span className="text-xl text-primary">Rs. {np.displayPrice}</span>
           {np.displayOriginalPrice && np.displayOriginalPrice > np.displayPrice && (
             <span className="text-sm text-muted-foreground line-through">
-              ${np.displayOriginalPrice}
+              Rs. {np.displayOriginalPrice}
             </span>
           )}
         </div>

@@ -117,7 +117,7 @@ export function Cart() {
                   <div className="text-sm text-primary font-medium mb-2">
                     {typeof product.category === 'string' ? product.category : product.category?.name || ''}
                   </div>
-                  <div className="text-xl font-bold">${np.displayPrice}</div>
+                  <div className="text-xl font-bold">Rs. {np.displayPrice}</div>
                 </div>
 
                 <button 
@@ -164,12 +164,12 @@ export function Cart() {
               )}
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Subtotal</span>
-                <span className="font-bold text-foreground">${total.toFixed(2)}</span>
+                <span className="font-bold text-foreground">Rs. {total.toFixed(2)}</span>
               </div>
               {(cartMeta?.couponDiscount || 0) > 0 && (
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Coupon Discount</span>
-                  <span className="font-bold text-emerald-600">-₹{Number(cartMeta.couponDiscount).toFixed(2)}</span>
+                  <span className="font-bold text-emerald-600">-Rs. {Number(cartMeta.couponDiscount).toFixed(2)}</span>
                 </div>
               )}
               <div className="flex justify-between">
@@ -178,7 +178,7 @@ export function Cart() {
               </div>
               <div className="border-t border-border pt-4 flex justify-between text-xl mt-4">
                 <span className="font-bold">Total</span>
-                <span className="font-bold text-primary">₹{Number(finalTotal).toFixed(2)}</span>
+                <span className="font-bold text-primary">Rs. {Number(finalTotal).toFixed(2)}</span>
               </div>
             </div>
 

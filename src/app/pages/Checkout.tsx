@@ -423,7 +423,7 @@ export function Checkout() {
             disabled={loading}
             className="w-full bg-primary text-primary-foreground py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/30 active:scale-[0.98] disabled:opacity-60"
           >
-            {loading ? 'Placing Order...' : `Place Order — ₹${payableTotal.toFixed(2)}`}
+            {loading ? 'Placing Order...' : `Place Order — Rs. ${payableTotal.toFixed(2)}`}
           </button>
         </form>
 
@@ -445,7 +445,7 @@ export function Checkout() {
                       <p className="font-medium text-foreground truncate">{np.displayName}</p>
                       <p className="text-sm text-muted-foreground">Qty: 1</p>
                     </div>
-                    <span className="font-bold">₹{np.displayPrice}</span>
+                    <span className="font-bold">Rs. {np.displayPrice}</span>
                   </div>
                 );
               })}
@@ -469,12 +469,12 @@ export function Checkout() {
               )}
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Subtotal</span>
-                <span className="font-bold">₹{total.toFixed(2)}</span>
+                <span className="font-bold">Rs. {total.toFixed(2)}</span>
               </div>
               {couponDiscount > 0 && (
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Coupon Discount</span>
-                  <span className="font-bold text-emerald-600">-₹{couponDiscount.toFixed(2)}</span>
+                  <span className="font-bold text-emerald-600">-Rs. {couponDiscount.toFixed(2)}</span>
                 </div>
               )}
               <div className="flex justify-between">
@@ -483,7 +483,7 @@ export function Checkout() {
               </div>
               <div className="flex justify-between text-xl pt-2 border-t border-border">
                 <span className="font-bold">Total</span>
-                <span className="font-bold text-primary">₹{payableTotal.toFixed(2)}</span>
+                <span className="font-bold text-primary">Rs. {payableTotal.toFixed(2)}</span>
               </div>
             </div>
           </div>

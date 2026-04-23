@@ -223,7 +223,7 @@ export function MyOrders() {
                     </div>
                     <div>
                       <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Total</p>
-                      <p className="text-gray-800 font-bold text-[13px]">${(order.totalPriceAfterDiscount || order.totalPrice || 0).toFixed(2)}</p>
+                      <p className="text-gray-800 font-bold text-[13px]">Rs. {(order.totalPriceAfterDiscount || order.totalPrice || 0).toFixed(2)}</p>
                     </div>
                     <div>
                       <p className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Items</p>
@@ -338,9 +338,9 @@ export function MyOrders() {
                                   </div>
                                   {/* Item Price */}
                                   <div className="text-right flex-shrink-0">
-                                    <p className="font-bold text-gray-800">${(item.price * item.quantity).toFixed(2)}</p>
+                                    <p className="font-bold text-gray-800">Rs. {(item.price * item.quantity).toFixed(2)}</p>
                                     {item.quantity > 1 && (
-                                      <p className="text-xs text-muted-foreground">${item.price.toFixed(2)} each</p>
+                                      <p className="text-xs text-muted-foreground">Rs. {item.price.toFixed(2)} each</p>
                                     )}
                                   </div>
                                 </div>
@@ -395,7 +395,7 @@ export function MyOrders() {
                             <div className="space-y-1.5 text-sm">
                               <div className="flex justify-between">
                                 <span className="text-muted-foreground">Subtotal</span>
-                                <span className="text-gray-700 font-medium">${(order.totalPrice || 0).toFixed(2)}</span>
+                                <span className="text-gray-700 font-medium">Rs. {(order.totalPrice || 0).toFixed(2)}</span>
                               </div>
                               <div className="flex justify-between">
                                 <span className="text-muted-foreground">Shipping</span>
@@ -404,12 +404,12 @@ export function MyOrders() {
                               {order.totalPriceAfterDiscount && order.totalPriceAfterDiscount < order.totalPrice && (
                                 <div className="flex justify-between">
                                   <span className="text-muted-foreground">Discount</span>
-                                  <span className="text-emerald-600 font-medium">-${(order.totalPrice - order.totalPriceAfterDiscount).toFixed(2)}</span>
+                                  <span className="text-emerald-600 font-medium">-Rs. {(order.totalPrice - order.totalPriceAfterDiscount).toFixed(2)}</span>
                                 </div>
                               )}
                               <div className="border-t border-gray-200 pt-1.5 mt-1 flex justify-between">
                                 <span className="font-bold text-gray-800">Total</span>
-                                <span className="font-bold text-primary">${(order.totalPriceAfterDiscount || order.totalPrice || 0).toFixed(2)}</span>
+                                <span className="font-bold text-primary">Rs. {(order.totalPriceAfterDiscount || order.totalPrice || 0).toFixed(2)}</span>
                               </div>
                             </div>
                           </div>

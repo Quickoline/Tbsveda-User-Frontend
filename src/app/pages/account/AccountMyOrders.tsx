@@ -283,7 +283,7 @@ export function AccountMyOrders() {
                                 <p className="font-bold text-gray-800 text-sm line-clamp-1">{item.title || item.name || `Item #${idx + 1}`}</p>
                                 <p className="text-xs text-muted-foreground">Qty: {item.quantity}</p>
                               </div>
-                              <p className="font-bold text-sm text-gray-800">₹{(item.price * item.quantity).toFixed(0)}</p>
+                              <p className="font-bold text-sm text-gray-800">Rs. {(item.price * item.quantity).toFixed(0)}</p>
                             </div>
                           ))}
                         </div>

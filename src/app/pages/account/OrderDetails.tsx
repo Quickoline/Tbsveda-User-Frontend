@@ -119,29 +119,29 @@ export function OrderDetails() {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Items Total</span>
-                <span className="font-medium">₹{(order.itemsPrice || order.totalPrice || 0).toFixed(0)}</span>
+                <span className="font-medium">Rs. {(order.itemsPrice || order.totalPrice || 0).toFixed(0)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Shipping</span>
                 <span className={order.shippingPrice > 0 ? 'font-medium' : 'text-emerald-600 font-medium'}>
-                  {order.shippingPrice > 0 ? `₹${order.shippingPrice.toFixed(0)}` : 'Free'}
+                  {order.shippingPrice > 0 ? `Rs. ${order.shippingPrice.toFixed(0)}` : 'Free'}
                 </span>
               </div>
               {order.taxPrice > 0 && (
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Tax</span>
-                  <span className="font-medium">₹{order.taxPrice.toFixed(0)}</span>
+                  <span className="font-medium">Rs. {order.taxPrice.toFixed(0)}</span>
                 </div>
               )}
               {order.discountPrice > 0 && (
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Discount</span>
-                  <span className="text-emerald-600 font-medium">-₹{order.discountPrice.toFixed(0)}</span>
+                  <span className="text-emerald-600 font-medium">-Rs. {order.discountPrice.toFixed(0)}</span>
                 </div>
               )}
               <div className="border-t border-gray-200 pt-2 mt-2 flex justify-between">
                 <span className="font-bold text-foreground">Total</span>
-                <span className="font-bold text-primary text-lg">₹{(order.totalPrice || 0).toFixed(0)}</span>
+                <span className="font-bold text-primary text-lg">Rs. {(order.totalPrice || 0).toFixed(0)}</span>
               </div>
             </div>
           </div>
